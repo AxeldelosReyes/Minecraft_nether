@@ -14,11 +14,11 @@ def print_status(ms):
   if ms.online:
     if ms.current_players == 0 and cst.hour <= 12:
       print('Minecraft server is closing')
-      os.system("sudo stop.sh")
+      os.system("sudo ./stop.sh")
   else:
     if cst.hour >= 12:
       print('Minecraft server is starting')
-      os.system("sudo open.sh")
+      os.system("sudo ./open.sh")
   threading.Timer(30 , print_status ,args = (ms,)).start()
 
 print_status(ms)
